@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getSinglePlayer } from '../API';
+import { deletePlayer, getSinglePlayer } from '../API';
 import { useNavigate, useParams } from 'react-router-dom';
 
 function SinglePlayer() {
@@ -20,6 +20,11 @@ function SinglePlayer() {
   }, []);
   console.log(player);
 
+  async function deleteHandler(playerId) {
+    await deletePlayer(playerId);
+    navigate('/');
+  }
+
   function backHome() {
     navigate('/');
   }
@@ -39,6 +44,7 @@ function SinglePlayer() {
         <p>Team Id: {player.teamId}</p>
         <p>Cohort Id: {player.cohortId}</p>
         <button onClick={backHome}>Return to Roster</button>
+        <button onClick={() => deleteHandler(player.id)}>Remove Player</button>
       </div>
     </section>
   );
