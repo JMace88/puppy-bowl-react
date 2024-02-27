@@ -1,0 +1,120 @@
+:root {
+  --beige: #F9EFDB;
+  --khaki: #ebd9b4;
+  --fern: #9dbc98;
+  --seafoam: #638889;
+}
+
+body {
+    margin: 0;
+    
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  header {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background-color: rgba(47, 0, 255, 0.233);
+  }
+  header img {
+    height: 100%;
+  }
+  header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header nav {
+    display: flex;
+    align-items: center;
+  }
+  header nav > a {
+    color: rgb(205, 30, 30);
+    text-decoration: none;
+    margin: 5px;
+  }
+  header nav > a.active {
+    text-decoration: underline;
+  }
+  main {
+    margin: 1rem;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+  }
+  
+  form {
+    box-sizing: border-box;
+  align-content: center;
+  text-align: center;
+  place-self: center;
+  flex-direction: column;
+  margin: 1rem;
+  background-color: var(--khaki);
+  border: 2px,blue;
+  /* border-style: solid; */
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+  /* form > label {
+   
+  } */
+  .item-card {
+    border: 2px solid black;
+    margin: 10px;
+  }
+  .all-players{
+    display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto auto auto;
+  grid-auto-columns: min-content;
+  column-gap: 5vw;
+  }
+  img{
+    max-width: 200px;
+    place-self: center;
+  }
+  .player-card {
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--khaki);
+  /* border-style: solid; */
+  border-radius: 10px;
+  width: 20rem;
+  margin: 1rem;
+  padding: .75rem;
+  align-content: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+  }
+  input{
+    margin: .25rem;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--beige);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  label{
+    color: var(--seafoam);
+    text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  button{
+    border: none;
+    border-radius: 2.5rem;
+    padding: .5rem;
+    margin: .25rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--seafoam);
+    background-color: var(--beige);
+    text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
