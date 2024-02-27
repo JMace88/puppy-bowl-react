@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import SearchBar from '../components/SearchBar';
+// import SearchBar from '../components/SearchBar';
 
 function Navbar() {
   return (
@@ -7,11 +7,11 @@ function Navbar() {
       <h1>Puppy Bowl 2024</h1>
       <div className='navSearch'>
         <nav >
-          <NavLink to='/'>Home</NavLink>
+          {/* <NavLink to='/'>Home</NavLink> */}
+          <NavLink to='/'>Player Roster</NavLink>
           <NavLink to='/newplayer'>Add New Player</NavLink>
-          <NavLink to='/roster'>Player Roster</NavLink>
         </nav>
-        <SearchBar />
+        {/* <SearchBar /> */}
       </div>
     </header>
   );
