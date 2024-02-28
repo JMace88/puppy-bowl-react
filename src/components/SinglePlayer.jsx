@@ -44,7 +44,17 @@ function SinglePlayer() {
         <p>Team Id: {player.teamId}</p>
         <p>Cohort Id: {player.cohortId}</p>
         <button onClick={backHome}>Return to Roster</button>
-        <button onClick={() => deleteHandler(player.id)}>Remove Player</button>
+        <button
+          onClick={() => {
+            if (confirm('Do you want to remove this player?')) {
+              deleteHandler(player.id);
+            } else {
+              return false;
+            }
+          }}
+        >
+          Remove Player
+        </button>
       </div>
     </section>
   );

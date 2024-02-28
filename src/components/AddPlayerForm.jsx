@@ -6,6 +6,7 @@ function AddPlayerForm() {
   const [name, setName] = useState('');
   const [breed, setBreed] = useState('');
   const [imageUrl, setImageUrl] = useState('');
+  const navigate = useNavigate();
 
   function clearForm() {
     setName('');
@@ -27,33 +28,43 @@ function AddPlayerForm() {
         'https://fsa-puppy-bowl.herokuapp.com/api/JMace88/players',
         payload
       );
+      clearForm();
+      navigate('/')
     } catch (error) {
       console.error(error);
     }
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Puppy's Name:
-        <input value={name} onChange={(event) => setName(event.target.value)} />
-      </label>
-      <label>
-        Puppy's Breed:
-        <input
-          value={breed}
-          onChange={(event) => setBreed(event.target.value)}
-        />
-      </label>
-      <label>
-        Image URL:
-        <input
-          value={imageUrl}
-          onChange={(event) => setImageUrl(event.target.value)}
-        />
-      </label>
-      <button type= 'submit'>Add Player</button>
-    </form>
+    <div className='formBox'>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Puppy's Name:
+          <input
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            placeholder="enter they puppy player's name"
+          />
+        </label>
+        <label>
+          Puppy's Breed:
+          <input
+            value={breed}
+            onChange={(event) => setBreed(event.target.value)}
+            placeholder="enter the puppy's breed or 'Mixed' if unknown"
+          />
+        </label>
+        <label>
+          Puppy's Selfie:
+          <input
+            value={imageUrl}
+            onChange={(event) => setImageUrl(event.target.value)}
+            placeholder="enter the URL to your puppy's image here"
+          />
+        </label>
+        <button type='submit'>Add Player</button>
+      </form>
+    </div>
   );
 }
 
